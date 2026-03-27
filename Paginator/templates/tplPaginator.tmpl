@@ -1,0 +1,26 @@
+#encoding UTF-8
+#if $paginator.pageCount > 1
+    <div class="dbPaginatorOuter">
+        <ul>
+            <li class="first"><a href="?page=1">«</a></li>
+
+            <li class="prev">
+                #if $paginator.prevPage is not None
+                <a href="?page=$paginator.prevPage">&lt</a>
+                #else
+                &nbsp;
+                #end if
+            </li>
+            <li class="next">
+                #if $paginator.nextPage is not None
+                <a href="?page=$paginator.nextPage">&gt</a>
+                #else
+                &nbsp;
+                #end if
+            </li>
+            <li class="last"><a href="?page=$paginator.lastPage">»</a></li>
+        </ul>
+        <br>
+        Seite $paginator.currentPage von $paginator.pageCount
+    </div>
+#end if
